@@ -1,11 +1,30 @@
-<div align="center">
+# threlte-starter
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A starter [SvelteKit](https://kit.svelte.dev) project for [Threlte](https://threlte.xyz).
 
-  <h1>Built with AI Studio</h2>
+[Live demo](https://threlte-starter.vercel.app)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Usage
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+To set up on your local machine:
 
-</div>
+```sh
+npx degit joshnuss/threlte-starter
+cd threlte-starter
+pnpm install
+pnpm dev
+```
+
+## Deploy
+
+To deploy your project:
+
+```sh
+pnpm vercel
+```
+
+...and don't forget to have fun!
+
+## License
+
+MIT

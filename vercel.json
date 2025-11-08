@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    },
+    {
+      "src": "backend/films_backend/films_backend/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": "staticfiles/**" }
+    }
+  ],
+  "rewrites": [
+    { "source": "/models/:path*", "destination": "https://w0cb58ft2bj7sg0v.public.blob.vercel-storage.com/models/:path*" },
+    { "source": "/textures/:path*", "destination": "https://w0cb58ft2bj7sg0v.public.blob.vercel-storage.com/textures/:path*" },
+    { "source": "/assets/:path*", "destination": "https://w0cb58ft2bj7sg0v.public.blob.vercel-storage.com/assets/:path*" },
+    { "source": "/api/(.*)", "destination": "/backend/films_backend/films_backend/wsgi.py" },
+    { "source": "/dashboard", "destination": "/backend/films_backend/films_backend/wsgi.py" },
+    { "source": "/dashboard/(.*)", "destination": "/backend/films_backend/films_backend/wsgi.py" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
